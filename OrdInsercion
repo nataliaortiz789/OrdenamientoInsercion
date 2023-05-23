@@ -1,0 +1,69 @@
+//ordenamiento por insercion recursivo e iterativo
+class HelloWorld {
+    public static int[] ordInsercionIterativo (int a[]){
+        int i=0;
+        int aux=0;
+        int j=0;
+        
+        for(i=1; i<a.length; i++){
+            j=i;
+            aux = a[i];
+        
+        while (j>0 && aux<a[j-1]){
+            a[j]=a[j-1];
+            j--;
+        }
+        
+        a[j]=aux;
+        }
+       return a; 
+        
+    }
+    
+    public static int[] ordInsercionIRecursivo(int a[], int n){
+        
+        int i=0;
+        int aux=0;
+        int j=0;
+        
+        if(n==1)
+            return a;
+        
+        else{
+            for(i=1; i<a.length; i++){
+            j=i;
+            aux = a[i];
+        
+        while (j>0 && aux<a[j-1]){
+            a[j]=a[j-1];
+            j--;
+        }
+        
+        a[j]=aux;
+        }
+        
+        }
+         return a;
+    }
+    
+    public static void main(String[] args) {
+       int entrada[] = {50,20,40,10,60};
+	    
+	    int ordenado[]= ordInsercionIterativo(entrada);
+	    
+	    System.out.println("iterativo: ");
+	    
+	    for(int i=0; i<ordenado.length;i++){
+	        System.out.println(ordenado[i]);
+	    }
+	    
+	    System.out.println("recursivo: ");
+	    
+	    int recursivo[] = ordInsercionIRecursivo(entrada, entrada.length);
+	    
+	    for(int i=0; i<recursivo.length;i++){
+	        System.out.println(recursivo[i]);
+	    }
+	}
+    
+}
